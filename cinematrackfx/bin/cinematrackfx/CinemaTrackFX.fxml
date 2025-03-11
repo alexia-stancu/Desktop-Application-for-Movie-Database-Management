@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane stylesheets="@application.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cinematrackfx.CinemaTrackFXController">
+
+	<!-- TabPane pentru gestionarea diferitelor taburi -->
+	<TabPane AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+
+		<!-- Tab pentru pagina de bun venit -->
+		<Tab text="Bine ai venit">
+			<AnchorPane prefHeight="577.0" prefWidth="901.0">
+				<Label layoutX="389.0" layoutY="226.0" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Bine ai venit la CinemaTrack!" />
+			</AnchorPane>
+		</Tab>
+
+		<!-- Tab pentru Filme -->
+		<Tab text="Filme">
+			<AnchorPane>
+				<!-- Butoane pentru acțiuni -->
+				<HBox alignment="CENTER_RIGHT" spacing="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10">
+					<Button fx:id="buton_incarcarefilme" onAction="#incarcaFilme" text="Încarcă Filme" />
+					<Button fx:id="buton_adaugafilm" onAction="#startAdaugaFilm" text="Adaugă Film" />
+					<Button fx:id="buton_modificafilm" onAction="#onModificaFilmClick" text="Modifică Film" />
+					<Button fx:id="buton_stergefilm" onAction="#stergeFilm" text="Șterge Film" />
+				</HBox>
+
+				<!-- Tabelul de filme -->
+				<TableView fx:id="tabela_filme" prefHeight="500" prefWidth="900" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="50">
+					<columns>
+						<TableColumn fx:id="atribut_idfilm" prefWidth="100" text="ID Film" />
+						<TableColumn fx:id="atribut_titlu" prefWidth="200" text="Titlu" />
+						<TableColumn fx:id="atribut_gen" prefWidth="169.0" text="Gen" />
+						<TableColumn fx:id="atribut_an_lansare" prefWidth="194.0" text="An Lansare" />
+						<TableColumn fx:id="atribut_durata" prefWidth="178.0" text="Durată" />
+						<TableColumn fx:id="atribut_descriere" prefWidth="280.0" text="Descriere" />
+					</columns>
+				</TableView>
+            <Label layoutX="27.0" layoutY="20.0" text="Tabela Filme" />
+			</AnchorPane>
+		</Tab>
+
+		<!-- Tab pentru Producători -->
+		<Tab text="Producători">
+			<AnchorPane>
+				<!-- Butoane pentru acțiuni -->
+				<HBox alignment="CENTER_RIGHT" spacing="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10">
+					<Button fx:id="buton_incarcareproducatori" onAction="#incarcaProducatori" text="Încarcă Producători" />
+					<Button fx:id="buton_adaugaproductor" onAction="#startAdaugaProducator" text="Adaugă Producător" />
+					<Button fx:id="buton_modificaproductor" onAction="#onModificaProducatorClick" text="Modifică Producător" />
+					<Button fx:id="buton_stergeproducator" onAction="#stergeProducator" text="Șterge Producător" />
+				</HBox>
+
+				<!-- Tabelul de producători -->
+				<TableView fx:id="tabela_producatori" prefHeight="500" prefWidth="900" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="50">
+					<columns>
+						<TableColumn fx:id="atribut_idproducator" prefWidth="119.5" text="ID Producător" />
+						<TableColumn fx:id="atribut_numep" prefWidth="187.5" text="Nume" />
+						<TableColumn fx:id="atribut_prenumep" prefWidth="193.0" text="Prenume" />
+						<TableColumn fx:id="atribut_adresap" prefWidth="207.5" text="Adresă" />
+						<TableColumn fx:id="atribut_nationalitatep" prefWidth="214.5" text="Naționalitate" />
+						<TableColumn fx:id="atribut_venitp" prefWidth="199.0" text="Venit" />
+					</columns>
+				</TableView>
+            <Label layoutX="10.0" layoutY="20.0" text="Tabela Producatori" />
+			</AnchorPane>
+		</Tab>
+
+		<!-- Tab pentru Actori -->
+        <Tab text="Actori">
+            <AnchorPane>
+                <!-- Tabelul de actori -->
+                <TableView fx:id="tabela_actori" layoutX="9.0" layoutY="66.0" prefHeight="223.0" prefWidth="1123.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="66.0">
+                    <columns>
+                        <TableColumn fx:id="atribut_idactor" text="ID Actor" />
+                        <TableColumn fx:id="atribut_nume_a" prefWidth="74.5" text="Nume" />
+                        <TableColumn fx:id="atribut_prenume_a" prefWidth="85.5" text="Prenume" />
+                        <TableColumn fx:id="atribut_rol_a" text="Rol" />
+                        <TableColumn fx:id="atribut_titlufilm_a" text="Titlu Film" />
+                        <TableColumn fx:id="atribut_genfilm_a" prefWidth="80.5" text="Gen Film" />
+                        <TableColumn fx:id="atribut_an_lansarefilm_a" prefWidth="83.0" text="An Lansare Film" />
+                        <TableColumn fx:id="atribut_duratafilm_a" prefWidth="76.5" text="Durata Film" />
+                        <TableColumn fx:id="atribut_descrierefilm_a" text="Descriere Film" />
+                        <TableColumn fx:id="atribut_numep_a" text="Nume Producator" />
+                        <TableColumn fx:id="atribut_prenumep_a" text="Prenume Producator" />
+                        <TableColumn fx:id="atribut_adresap_a" text="Adresa Producator" />
+                        <TableColumn fx:id="atribut_nationalitatep_a" text="Nationalitate Producator" />
+                        <TableColumn fx:id="atribut_venitp_a" text="Venit Producator" />
+                    </columns>
+                </TableView>
+
+                <!-- Butoane pentru Actori -->
+                <VBox alignment="TOP_LEFT" layoutX="466.0" layoutY="436.0" prefHeight="120.0" prefWidth="211.0" spacing="15" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="466.0" AnchorPane.rightAnchor="465.0">
+                    <TextField fx:id="inputnume_a" alignment="CENTER" promptText="Nume" />
+                    <TextField fx:id="inputprenume_a" alignment="CENTER" promptText="Prenume" />
+                    <TextField fx:id="inputrol_a" alignment="CENTER" promptText="Rol" />
+                    <HBox alignment="CENTER_LEFT" spacing="10" />
+                </VBox>
+
+                <!-- Butoane pentru încărcarea și ștergerea actorilor -->
+                <HBox alignment="CENTER_RIGHT" spacing="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="220" />
+                  <Button layoutX="929.0" layoutY="14.0" onAction="#modificaActor" text="Modifica Actor" />
+                  <Button layoutX="820.0" layoutY="14.0" onAction="#adaugaActor" text="Adauga Actor" />
+                 <ComboBox fx:id="combobox_film" layoutX="471.0" layoutY="349.0" promptText="Film" />
+                 <ComboBox fx:id="combobox_producator" layoutX="471.0" layoutY="391.0" promptText="Producator" />
+                 <Button fx:id="buton_incarcareactori" layoutX="713.0" layoutY="14.0" onAction="#incarcaActori" text="Incarca Actori" />
+                 <Button fx:id="buton_stergeactor" layoutX="1042.0" layoutY="14.0" onAction="#stergeActor" text="Sterge Actor" />
+            <Label layoutX="14.0" layoutY="24.0" text="Tabela Actori" />
+            <Label layoutX="448.0" layoutY="303.0" prefHeight="25.0" prefWidth="249.0" text="Sectiune de adăugare și modificare :">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            </AnchorPane>
+        </Tab>
+	</TabPane>
+</AnchorPane>

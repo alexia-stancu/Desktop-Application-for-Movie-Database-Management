@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="456.0" prefWidth="576.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cinematrackfx.AdaugaProducatorController">
+    <Label layoutX="175.0" layoutY="55.0" style="-fx-font-size: 18px;" text="Adaugă un nou producător :" />
+    
+    <TextField fx:id="inputnumep" alignment="CENTER" layoutX="213.0" layoutY="106.0" promptText="Nume" />
+    <TextField fx:id="inputprenumep" alignment="CENTER" layoutX="213.0" layoutY="150.0" promptText="Prenume" />
+    <TextField fx:id="inputadresap" alignment="CENTER" layoutX="213.0" layoutY="195.0" promptText="Adresă" />
+    <TextField fx:id="inputnationalitatep" alignment="CENTER" layoutX="213.0" layoutY="239.0" promptText="Naționalitate" />
+    <TextField fx:id="inputvenitp" alignment="CENTER" layoutX="213.0" layoutY="281.0" promptText="Venit" />
+    
+    <Button layoutX="257.0" layoutY="327.0" onAction="#adaugaProducator" text="Salvează" />
+    <Button layoutX="263.0" layoutY="371.0" onAction="#inapoiLaPaginaPrincipala" text="Înapoi" />
+</AnchorPane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="418.0" prefWidth="518.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cinematrackfx.ModificaFilmController">
+	<Label layoutX="200" layoutY="20" style="-fx-font-size: 18px;" text="Modifică un film :" />
+	<TextField fx:id="inputtitlu" alignment="CENTER" layoutX="194.0" layoutY="71.0" promptText="Titlu" />
+	<TextField fx:id="inputgen" alignment="CENTER" layoutX="194.0" layoutY="119.0" promptText="Gen" />
+	<TextField fx:id="inputan_lansare" alignment="CENTER" layoutX="195.0" layoutY="170.0" promptText="An Lansare" />
+	<TextField fx:id="inputdurata" alignment="CENTER" layoutX="194.0" layoutY="222.0" promptText="Durată" />
+	<TextField fx:id="inputdescriere" alignment="CENTER" layoutX="195.0" layoutY="272.0" promptText="Descriere" />
+	<Button layoutX="238.0" layoutY="320.0" onAction="#modificaFilm" text="Salvează" />
+	<Button layoutX="237.0" layoutY="360.0" onAction="#inapoiLaPaginaPrincipala" text="Anulează" />
+</AnchorPane>

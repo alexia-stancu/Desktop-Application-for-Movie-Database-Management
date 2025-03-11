@@ -1,0 +1,21 @@
+TextField {
+    -fx-pref-width: 200px; 
+}
+
+ComboBox {
+    -fx-pref-width: 200px; 
+}
+
+Button {
+    -fx-font-size: 12px;
+    -fx-padding: 10px;
+}
+
+HBox {
+    -fx-spacing: 10px;
+    -fx-alignment: center-left;
+}
+
+TableView {
+    -fx-pref-height: 200px;
+}
